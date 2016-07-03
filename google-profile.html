@@ -1,0 +1,47 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+
+<dom-module id="google-profile">
+
+	<template>
+		<iron-ajax id="userinfo_ajax"
+			method="GET"
+			content-type="application/x-www-form-urlencoded"
+		    url="https://www.googleapis.com/oauth2/v1/userinfo"		    
+		    handle-as="json"
+		    on-response="handleResponse">
+		</iron-ajax>
+	</template>
+
+	<script>
+	  Polymer({
+	    is: 'google-profile',
+		properties: {
+	        token: {
+		        type: String,
+		        observer: '_tokenChanged'
+		    },
+		    userinfo: {
+		    	type: Object,
+		    	notify: true
+		    }
+        }, 
+        _tokenChanged: function(newValue, oldValue) {
+        	this.$.userinfo_ajax.params=this.compute_params(newValue);
+			this.$.userinfo_ajax.generateRequest();
+
+  		},
+        compute_params: function(token){
+			var params = {};
+			if (token) {
+				params['access_token'] = token;
+			}        	
+        	return params;
+        },
+		handleResponse: function(request){
+			this.userinfo=request.detail.response;
+		}
+	  });
+	</script>
+</dom-module>

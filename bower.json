@@ -1,0 +1,21 @@
+{
+  "name": "google-profile",
+  "homepage": "https://github.com/fernandezpaco/google-profile",
+  "authors": [
+    "fernandezpaco <ffernandez@bbva.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-ajax": "PolymerElements/iron-ajax#^1.2.1",
+    "polymer": "Polymer/polymer#^1.6.0"
+  }
+}
