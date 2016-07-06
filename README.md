@@ -2,10 +2,12 @@
 Polymer component for getting user profile info from google
 
 ```html
- <cordova-google-signin 
+  <cordova-google-signin 
     id="cordovasignin" 
     client_id="your-client-id"
-    client_secret= "your-secret-key">
+    client_secret= "your-secret-key"
+    scopes="your-needed-scopes"
+    token="{{tok}}">
   </cordova-google-signin>
 
   <google-profile token="{{tok}}" userinfo="{{userinfo}}"></google-profile>
