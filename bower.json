@@ -1,5 +1,6 @@
 {
   "name": "google-profile",
+  "version": "1.0.0",
   "homepage": "https://github.com/fernandezpaco/google-profile",
   "authors": [
     "fernandezpaco <ffernandez@bbva.com>"
@@ -14,6 +15,15 @@
     "test",
     "tests"
   ],
+  "keywords": [
+    "cordova",
+    "oauth",
+    "google",
+    "sign-in",
+    "inappbrowser",
+    "web-component",
+    "web-components"
+  ],  
   "dependencies": {
     "iron-ajax": "PolymerElements/iron-ajax#^1.2.1",
     "polymer": "Polymer/polymer#^1.6.0"
