@@ -10,7 +10,8 @@
 			content-type="application/x-www-form-urlencoded"
 		    url="https://www.googleapis.com/oauth2/v1/userinfo"		    
 		    handle-as="json"
-		    on-response="handleResponse">
+		    on-response="handleResponse"
+		    on-error="throwerror">
 		</iron-ajax>
 	</template>
 
@@ -41,6 +42,10 @@
         },
 		handleResponse: function(request){
 			this.userinfo=request.detail.response;
+			this.userinfo['displayName']=this.userinfo.name;
+		},
+		throwerror: function(err){
+			this.fire('google-profile-error')
 		}
 	  });
 	</script>
