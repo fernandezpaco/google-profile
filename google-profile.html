@@ -41,8 +41,9 @@
         	return params;
         },
 		handleResponse: function(request){
-			this.userinfo=request.detail.response;
-			this.userinfo['displayName']=this.userinfo.name;
+			var res=request.detail.response;
+			res['displayName']=res.name;
+			this.userinfo=res;
 		},
 		throwerror: function(err){
 			this.fire('google-profile-error')
